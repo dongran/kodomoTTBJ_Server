@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>UPLOAD FILES</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom datePicker -->
+    <link rel="stylesheet" href="__PUBLIC__/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <include file="./Application/Home/View/Index/nav.html"/>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Create New User</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        新規学生情報入力
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-offset-2">
+                                <form role="form" action="__SELF__" method="post">
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">氏名</span>
+                                        <input type="text" class=" form-control" name="stuname">
+                                    </div>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">生年月日</span>
+                                        <div class='input-group date' id='datetimepicker'>
+                                            <input type='text' class="form-control"  name="birthday" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">学校の種類</span>
+                                        <!--<input type="text" class="form-control" name="school_type">-->
+                                        <select class="form-control" name="school_type">
+                                            <option>日本公立学校</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">学校名</span>
+                                        <input type="text" class="form-control" name="school_name">
+
+                                    </div>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">学年</span>
+                                        <select class="form-control" name="grade">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">組</span>
+                                        <input type="text" class="form-control" name="team" placeholder="option">
+                                    </div>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">番号</span>
+                                        <input type="text" class="form-control" name="num" placeholder="option">
+                                    </div>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon span-width">学校の場所</span>
+                                        <input type="text" class="form-control" name="school_location"
+                                               placeholder="アメリカとか">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default">SUBMIT</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="__PUBLIC__/dist/js/sb-admin-2.js"></script>
+
+<!-- datepiker JavaScript-->
+<script type="text/javascript" src="__PUBLIC__/bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker').datetimepicker({
+            viewMode: 'years',
+            format: 'YYYY/MM/DD'
+        });
+    });
+</script>
+
+</body>
+
+</html>

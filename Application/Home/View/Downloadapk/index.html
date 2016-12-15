@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KodomoTTBJ</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">同意書</h3>
+                </div>
+                <div class="panel-body">
+
+
+                            <!--<div class="checkbox">
+                                <label>
+                                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                </label>
+                            </div>-->
+                            <!-- Change this to a button or input when using this as a form -->
+
+                    <button type="button" id="closePage" class="btn btn-default　pull-left">Close</button>
+
+
+                    <a href="__SELF__download" type="button" id="download" class="btn btn-success pull-right">同意</a>
+
+
+                    <p id="tipMsg" class="text-danger"></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!--<script type="application/javascript">
+    $(function(){
+        $("#closePage").submit(function(){
+            window.close();
+        });
+        $("#download").click(function(){
+            $.ajax({
+                type : "POST",  //提交方式
+                url : "__SELF__download",  //路径
+                success : function(result){ //返回数据根据结果进行相应的处理
+                        $("#tipMsg").text(result);
+                }
+            });
+        });
+    })
+
+</script>-->
+
+</body>
+
+</html>

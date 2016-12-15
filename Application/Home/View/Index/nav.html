@@ -1,0 +1,109 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="__URL__/index">KodomoTTBJ </a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="__SELF__"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                </li>
+                <li><a href="__SELF__"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="__MODULE__/Login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                    </div>
+                    <!-- /input-group -->
+                </li>
+                <li>
+                    <a href="__URL__/index"><i class="fa fa-dashboard fa-fw"></i> About</a>
+                </li>
+                <!--<li>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Score Charts<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="__PUBLIC__/pages/flot.html">Flot Charts</a>
+                        </li>
+                        <li>
+                            <a href="__PUBLIC__/pages/morris.html">Morris.js Charts</a>
+                        </li>
+                    </ul>
+                    &lt;!&ndash; /.nav-second-level &ndash;&gt;
+                </li>-->
+                <li>
+                    <a href="#"><i class="fa fa-table fa-fw"></i> User Manager<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <!-- 当condition == 1 时,输出创建老师标签-->
+                        <if condition="$Think.session.auth eq 1">
+                            <li>
+                                <a href="__URL__/teachuserlist">View TeacherUser</a>
+                            </li>
+                        </if>
+                        <li>
+                            <a href="__URL__/stuserlist">View StudentUser</a>
+                        </li>
+                        <if condition="$Think.session.auth eq 1">
+                            <li>
+                                <a href="__URL__/createteach">Create NewTeacher</a>
+                            </li>
+                        </if>
+                        <if condition="$Think.session.auth eq 0">
+                            <li>
+                                <a href="__URL__/createstu">Create NewStudent</a>
+                            </li>
+                        </if>
+                    </ul>
+                </li>
+                <if condition="$Think.session.auth eq 1">
+                    <li>
+                        <a href="__URL__/uploadexam"><i class="fa fa-edit fa-fw"></i> Upload Exams</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Export<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="active" href="__URL__/exportscore">Export Score</a>
+                            </li>
+                            <li>
+                                <a href="__URL__/exportdata">Export student data</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </if>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
