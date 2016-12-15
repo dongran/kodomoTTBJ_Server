@@ -14,6 +14,7 @@ class IndexController extends BaseController {
         //$this->assign('actionName', 'index');
         $this->display();
     }
+
     public function stuserlist(){
         $stusers = M("stusers");
         $count = $stusers->count();
@@ -33,6 +34,7 @@ class IndexController extends BaseController {
         $this->assign('stuList', $stulist);
         $this->display();
     }
+
     public function teachuserlist(){
         //$this->assign('actionName', 'index');
         $manager = M("manager");
@@ -41,11 +43,27 @@ class IndexController extends BaseController {
         $show = $Page->show();
 
         $tealist = $manager->order('id')->limit($Page->firstRow.','.$Page->listRows)->getField('id, username, auth');
-
         $this->assign('page', $show);
-        $this->assign('teaList', $tealist);
+        $this->assign('teaList', $tealis
         $this->display();
     }
+
+    public function scoreslist(){
+        $scores = M("scores");
+        $count = $scores->count();
+        $Page = PageCreater($count);
+        $show = $Page->show();// 分页显示输出// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+
+        $scoreslist = $scores->order('id')->limit($Page->firstRow.','.$Page->listRows)->getField('test_name, end_time, user_answers, answer_times');
+        // echo var_dump($scoreslist);
+        foreach ($scoreslist as $value){
+            echo $value;
+        }
+        $this->assign('page',$show);// 赋值分页输出
+        $this->assign('scoreList', $scoreslist);
+        $this->display();
+    }
+
     public function createteach(){
         if(IS_POST){
             $teacher = D('manager');
@@ -86,6 +104,8 @@ class IndexController extends BaseController {
             $this->display();
         }
     }
+
+    
 
     public function uploadexam(){
         //$this->assign('actionName', 'index');
