@@ -16,6 +16,7 @@ class DownloadapkController extends Controller {
     }
 
 
+  
     public function download(){
         
         $file_name="kodomoTTBJ.apk";
