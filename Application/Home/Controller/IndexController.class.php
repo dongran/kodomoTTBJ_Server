@@ -44,7 +44,7 @@ class IndexController extends BaseController {
 
         $tealist = $manager->order('id')->limit($Page->firstRow.','.$Page->listRows)->getField('id, username, auth');
         $this->assign('page', $show);
-        $this->assign('teaList', $tealis
+        $this->assign('teaList', $tealist);
         $this->display();
     }
 
@@ -98,6 +98,8 @@ class IndexController extends BaseController {
 
             $new['uid'] = $res['stuname'].$lastInsID;
             $stUser->where($where)->save($new);
+            
+            
             $this->success('New Student Create successfully ...', U('Index/stuserlist'), 0);
 
         }else{
