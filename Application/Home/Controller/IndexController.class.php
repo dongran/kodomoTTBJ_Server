@@ -84,6 +84,7 @@ class IndexController extends BaseController {
     public function createstu(){
         if(IS_POST){
             $stUser = D('stusers');
+            $exStatus = D('exstatus');
 
             if(!$data = $stUser->create()){
                 header("Content-type: text/html; charset=utf-8");
@@ -98,7 +99,23 @@ class IndexController extends BaseController {
 
             $new['uid'] = $res['stuname'].$lastInsID;
             $stUser->where($where)->save($new);
-            
+
+            /* 初始化对应用户的考试状态记录 */
+            $SpotyStatus['uid'] = $new['uid'];
+            $SpotyStatus['paper_name'] = "spoty";
+            $SpotyStatus['level'] = 0;
+            $exStatus->add($SpotyStatus);
+
+            $SpotStatus['uid'] = $new['uid'];
+            $SpotStatus['paper_name'] = "spot";
+            $SpotStatus['level'] = 0;
+            $exStatus->add($SpotStatus);
+
+            $MojiStatus['uid'] = $new['uid'];
+            $MojiStatus['paper_name'] = "moji";
+            $MojiStatus['level'] = 0;
+            $exStatus->add($MojiStatus);
+
             
             $this->success('New Student Create successfully ...', U('Index/stuserlist'), 0);
 
