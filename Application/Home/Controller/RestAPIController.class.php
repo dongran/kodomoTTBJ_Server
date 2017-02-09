@@ -121,6 +121,17 @@ class RestAPIController extends Controller {
                 $ScoreModel->add($data);
             }
         }
+
+        $exStatus = D('exstatus');
+        $exStatus->level = intval($obj->{"exstatus"}->{"spoty"});
+        $exStatus->where('uid="'.$obj->{"username"}.'" and paper_name="spoty"')->save();
+
+        $exStatus->level = intval($obj->{"exstatus"}->{"spot"});
+        $exStatus->where('uid="'.$obj->{"username"}.'" and paper_name="spot"')->save();
+
+        $exStatus->level = intval($obj->{"exstatus"}->{"moji"});
+        $exStatus->where('uid="'.$obj->{"username"}.'" and paper_name="moji"')->save();
+
         echo "successfully!";
 
     }
