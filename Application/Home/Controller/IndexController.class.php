@@ -124,8 +124,6 @@ class IndexController extends BaseController {
         }
     }
 
-    
-
     public function uploadexam(){
         //$this->assign('actionName', 'index');
         if(IS_POST){
@@ -143,11 +141,17 @@ class IndexController extends BaseController {
     }
     public function exportscore(){
         //$this->display();
-        $this->error('sorry, NO DATA ...', U('Index/index'), 1);
+        //$this->error('sorry, NO DATA ...', U('Index/index'), 1);
+        $scoreList = getAllExamHistory();
+        $data = array(array('番号', '試験名', '試験者', '答え', '問題時間', '完成時間')) + $scoreList;
+        outXls($data);
     }
     public function exportdata(){
-        //$this->display();
-        $this->error('sorry, NO DATA ...', U('Index/index'), 1);
+        //'uid, stuname, birthday, school_type, school_name, grade, team, num, school_location'
+        $stuInfos = getAllStuInfo();
+        $data = array(array('試験者', '名前', '生年月日', '学校種類', '学校名', '学年',
+                :'組', '番号', '学校の場所')) + $stuInfos;
+        outXls($data);
     }
 
     public  function upload(){
