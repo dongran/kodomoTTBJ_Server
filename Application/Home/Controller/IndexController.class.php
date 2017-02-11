@@ -23,7 +23,8 @@ class IndexController extends BaseController {
 
         if(session('auth') == 1) {
             //$stulist = $stusers->getField('uid, stuname, birthday, school_type, school_name, grade, team, num, school_location, lastdate');
-            $stulist = $stusers->order('uid')->limit($Page->firstRow.','.$Page->listRows)->getField('uid, stuname, birthday, school_type, school_name, grade, team, num, school_location, lastdate');
+            $stulist = $stusers->order('uid')->limit($Page->firstRow.','.$Page->listRows)->getField('uid, 
+            stuname, birthday, school_type, school_name, grade, team, num, school_location, lastdate');
 
         }else{
             $Condition['usergroup'] = session("uid");
@@ -54,11 +55,9 @@ class IndexController extends BaseController {
         $Page = PageCreater($count);
         $show = $Page->show();// 分页显示输出// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
 
-        $scoreslist = $scores->order('id')->limit($Page->firstRow.','.$Page->listRows)->getField('test_name, end_time, user_answers, answer_times');
+        $scoreslist = $scores->order('id')->limit($Page->firstRow.','.$Page->listRows)->getField('test_name, 
+        end_time, user_answers, answer_times');
         // echo var_dump($scoreslist);
-        foreach ($scoreslist as $value){
-            echo $value;
-        }
         $this->assign('page',$show);// 赋值分页输出
         $this->assign('scoreList', $scoreslist);
         $this->display();
@@ -144,14 +143,14 @@ class IndexController extends BaseController {
         //$this->error('sorry, NO DATA ...', U('Index/index'), 1);
         $scoreList = getAllExamHistory();
         $data = array(array('番号', '試験名', '試験者', '答え', '問題時間', '完成時間')) + $scoreList;
-        outXls($data);
+        outXls($data, 'ScoreData.xls');
     }
     public function exportdata(){
         //'uid, stuname, birthday, school_type, school_name, grade, team, num, school_location'
         $stuInfos = getAllStuInfo();
         $data = array(array('試験者', '名前', '生年月日', '学校種類', '学校名', '学年',
                 '組', '番号', '学校の場所')) + $stuInfos;
-        outXls($data);
+        outXls($data, 'StudentData.xls');
     }
 
     public  function upload(){
