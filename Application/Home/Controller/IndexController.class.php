@@ -150,7 +150,7 @@ class IndexController extends BaseController {
         //'uid, stuname, birthday, school_type, school_name, grade, team, num, school_location'
         $stuInfos = getAllStuInfo();
         $data = array(array('試験者', '名前', '生年月日', '学校種類', '学校名', '学年',
-                :'組', '番号', '学校の場所')) + $stuInfos;
+                '組', '番号', '学校の場所')) + $stuInfos;
         outXls($data);
     }
 
