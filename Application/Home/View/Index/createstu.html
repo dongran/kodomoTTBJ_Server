@@ -80,6 +80,7 @@
                                         <!--<input type="text" class="form-control" name="school_type">-->
                                         <select class="form-control" name="school_type">
                                             <option>海外日本人学校</option>
+											<option>海外の教育機関</option>
                                             <option>日本の一般的な公立、私立の学校</option>
                                             <option>インターナショナルスクール</option>
                                             <option>外国人学校</option>
@@ -88,8 +89,18 @@
 
                                     </div>
                                     <div class="form-group input-group">
-                                        <span class="input-group-addon span-width">テスト実施学校</span>
-                                        <input type="text" class="form-control" name="school_name">
+                                        <span class="input-group-addon span-width">テスト実施者・機関</span>
+                                        <select class="form-control" name="school_name">
+                                            <option>海外日本人学校</option>
+											<option>海外の教育機関</option>
+                                            <option>日本の一般的な公立、私立の学校</option>
+                                            <option>インターナショナルスクール</option>
+                                            <option>外国人学校</option>
+                                            <option>日本語補習校</option>
+                                            <option>塾・語学学校</option>
+                                            <option>個人</option>
+                                            <option>その他</option>
+										</select>
 
                                     </div>
                                     <div class="form-group input-group">
@@ -116,9 +127,19 @@
                                         <input type="text" class="form-control" name="num" placeholder="任意">
                                     </div>
                                     <div class="form-group input-group">
-                                        <span class="input-group-addon span-width">国籍（ex.アメリカ） </span>
-                                        <input type="text" class="form-control" name="school_location"
-                                               placeholder="アメリカ">
+                                        <span class="input-group-addon span-width">第一言語</span>
+                                        <select class="form-control" name="school_location"　>
+	                                        <option>日本語</option>
+                                            <option>英語</option>
+                                            <option>中国語</option>
+                                            <option>ポルトガル語</option>
+                                            <option>ベトナム語</option>
+											<option>フィリピン語</option>
+											<option>韓国語</option>
+											<option>スペイン語</option>
+											<option>タイ語</option>
+											<option>その他</option>
+                                        </select>
                                     </div>
 
                                     <button type="submit" class="btn btn-default">SUBMIT</button>
